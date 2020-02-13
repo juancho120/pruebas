@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('type', 'TypeController')->only(['index', 'show', 'delete']);
+Route::resource('laboratory', 'LaboratoryController')->only(['index', 'show', 'delete']);
+Route::resource('drug', 'DrugController');
+Route::resource('batch', 'BatchController');
