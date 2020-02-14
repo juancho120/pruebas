@@ -16,9 +16,9 @@ class CreateDrugsTable extends Migration
         Schema::create('drugs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->varchar('name');
-            $table->biginteger('drugsLaboratories');->
-            $table->biginteger('drugsBatches');
-            $table->biginteger('drugsTypes');
+            $table->biginteger('IdLaboratories');
+            $table->biginteger('IdBatches');
+            $table->biginteger('IdTypes');
             $table->timestamps();
         });
     }
