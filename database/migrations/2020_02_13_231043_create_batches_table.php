@@ -15,10 +15,10 @@ class CreateBatchesTable extends Migration
     {
         Schema::create('batches', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->varchar('name');
+            $table->string('name');
             $table->date('creation');
             $table->date('expiration');
-            $table->varchar('manager');
+            $table->string('manager');
             $table->timestamps();
         });
     }

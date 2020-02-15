@@ -15,7 +15,7 @@ class CreateDrugsTable extends Migration
     {
         Schema::create('drugs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->varchar('name');
+            $table->string('name');
             $table->float('cost');
             $table->biginteger('laboratory_id');
             $table->biginteger('batch_id');
