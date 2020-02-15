@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Drug;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DrugController extends Controller
 {
@@ -14,7 +15,17 @@ class DrugController extends Controller
      */
     public function index()
     {
-        //
+        $drugs = DB::table('drugs')->get();
+        $laboratories = DB::table('laboratories')->get();
+        $batches = DB::table('batches')->get();
+        $types = DB::table('types')->get();
+
+        return view('models.drug.index', [
+            'drugs' => $drugs,
+            'laboratories' => $laboratories,
+            'batches' => $batches,
+            'type' => $types
+            ]);
     }
 
     /**
