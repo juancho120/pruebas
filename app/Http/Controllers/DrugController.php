@@ -35,7 +35,7 @@ class DrugController extends Controller
      */
     public function create()
     {
-        //
+        return view('models.drug.create');
     }
 
     /**
@@ -46,7 +46,11 @@ class DrugController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $drug = new Drug();
+        $drug->name = $request->input('name');
+        $drug->name = $request->input('cost');
+        $drug->save();
+        return 'saved';
     }
 
     /**

@@ -17,9 +17,9 @@ class CreateDrugsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->float('cost');
-            $table->biginteger('laboratory_id');
-            $table->biginteger('batch_id');
-            $table->biginteger('type_id');
+            $table->biginteger('laboratory_id')->nullable($value = true);
+            $table->biginteger('batch_id')->nullable($value = true);
+            $table->biginteger('type_id')->nullable($value = true);
             $table->timestamps();
         });
     }
